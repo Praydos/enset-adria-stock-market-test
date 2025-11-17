@@ -7,4 +7,6 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 @RepositoryRestResource
 public interface StockMarketRepository extends JpaRepository<StockMarket,Long> {
+    // Find the latest stock price for a company
+    StockMarket findTopByCompanyIdOrderByDateDesc(String companyId);
 }
